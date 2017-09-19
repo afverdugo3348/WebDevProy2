@@ -1,7 +1,17 @@
 import React, { Component } from 'react';
 import Solution from "./Component2.js";
 	var numLab = Math.floor(Math.random() * (1 - 0)) + 0;
-	var atributos={};
+	var atributos={
+		cantObstaculos:1,
+		cantSolucion:1,
+		id:1,
+		llegadaX:0,
+		llegadaY:0,
+		obstaculos:{1: 100, 2: 100, 3: 100, 4: 500},
+		posInicialX:0,
+		posInicialY:400,
+		solucion:{1: 50, 2: 50, 3: 50, 4: 500},
+		velocidad:100};
   var tablero;
   var tabSolution;
 	var direccion;
@@ -131,7 +141,8 @@ class App extends Component {
 				return res.json();
 			}
 		})
-		.then((obs)=>{
+		.then((obs)=>{			
+			console.log(atributos);
 			console.log(obs[numLab]);
 			atributos = obs[numLab];
 			console.log(numLab);
