@@ -159,6 +159,8 @@ class App extends Component {
 	}
   render() {
     return (
+	    //Recomendable el llamar una vista que colocar html en el App.Js const nombre = require('./NUEVAVISTA')
+		//app.use('/NUEVA VISTA', nombre);
       <div>
 		<h1>Laberinto</h1>
 		<div>
@@ -170,7 +172,6 @@ class App extends Component {
 				<Solution/>
 			</div>	
 		</div>
-
 		 );
   }
 
@@ -263,7 +264,27 @@ confirmarDer()
 	tifis.derOK = true;
 	dibujar();
 }
+/*
+Manejo de Error, alguuna manera de manejar respuestas inesperadas
+Usar alguna de las siguientes:
+// catch 404 and forward to error handler
+app.use(function (req, res, next) {
+    const err = new Error('Not Found');
+    err.status = 404;
+    next(err);
+});
 
+// error handler
+app.use(function (err, req, res, next) {
+    // set locals, only providing error in development
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+    // render the error page
+    res.status(err.status || 500);
+    res.render('error');
+});
+*/
 }
 
 export default App;
