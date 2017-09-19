@@ -135,7 +135,7 @@ class App extends Component {
 		
 }
 	componentDidMount(){
-		fetch("/tweets", {method:"GET",headers:{accept:"application/json"}})
+		fetch("/labs", {method:"GET",headers:{accept:"application/json"}})
 		.then((res)=>{
 			if(res.ok){
 				return res.json();
@@ -143,8 +143,6 @@ class App extends Component {
 		})
 		.then((obs)=>{			
 			console.log(atributos);
-			console.log(obs[numLab]);
-			atributos = obs[numLab];
 			console.log(numLab);
 			console.log(atributos);
 			tifis.x=atributos.posInicialX;
@@ -159,14 +157,16 @@ class App extends Component {
 	}
   render() {
     return (
-      <div>
-		<h1>Laberinto</h1>
+    	
+    	 <div>
+		<h1 >Laberinto-WebDevProyecto2</h1>
 		<div>
 		</div>		
 		<div>
 			<canvas id="campo" width="500" height="500"></canvas>
 		</div>
 			<div>
+			<h1 >Solución Laberinto-WebDevProyecto2</h1>
 				<Solution/>
 			</div>	
 		</div>

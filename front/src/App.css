@@ -1,0 +1,4 @@
+body{background: aliceblue;}
+#campo{display: block;float: left;}
+#solution{display: block;}
+.tittle{position: absolute;width: 100%; text-align: center;top: 10px}
