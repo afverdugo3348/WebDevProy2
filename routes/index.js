@@ -3,29 +3,29 @@ var router = express.Router();
 var mongodb = require("mongodb");
 
 
-var url ="mongodb://localhost:27017/test";
+var url ="mongodb://192.168.0.1:27017/test";
 
-function getTweets(callback){
+function getLabs(callback){
 	mongodb.connect(url, (err,db)=>{
 		if(err) throw err;
 
-		var tweets = db.collection("test");
-		tweets.find({}).toArray((err2,tweets)=>{
+		var labs = db.collection("test");
+		labs.find({}).toArray((err2,labs)=>{
 			if(err2) throw err2;
 
-			callback(tweets);
+			callback(labs);
 		});
 	});
 
 };
 
 /* GET home page. */
-router.get('/tweets', function(req, res) {
+router.get('/labs', function(req, res) {
 
 
-	getTweets((tweets)=>{
+	getTweets((labs)=>{
 
-		res.json(tweets);
+		res.json(labs);
 	})
 });
 
